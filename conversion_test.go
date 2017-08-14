@@ -7,7 +7,7 @@ import (
 	"github.com/smartystreets/assertions/should"
 )
 
-func Test(t *testing.T) {
+func TestConversions(t *testing.T) {
 	assert := assertions.New(t)
 
 	assert.So(Uint64ToString(uint64(maxUint64)), should.Equal, maxUint64String)
