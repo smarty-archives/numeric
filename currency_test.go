@@ -8,11 +8,11 @@ import (
 )
 
 func TestUSDToCents(t *testing.T) {
-    gunit.Run(new(USDToCentsFixture), t)
+	gunit.Run(new(USDToCentsFixture), t)
 }
 
 type USDToCentsFixture struct {
-    *gunit.Fixture
+	*gunit.Fixture
 }
 
 func (this *USDToCentsFixture) assertParsed(input string, expectedCents uint64) {
@@ -67,5 +67,5 @@ func (this *USDToCentsFixture) TestTryUSDToCents_Invalid_IncorrectCommaPlacement
 
 func (this *USDToCentsFixture) TestUSDToCentsPanicsForUnderlyingError() {
 	this.So(USDToCents("$1.23"), should.Equal, 123)
-	this.So(func() {USDToCents("invalid")}, should.Panic)
+	this.So(func() { USDToCents("invalid") }, should.Panic)
 }

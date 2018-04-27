@@ -53,5 +53,5 @@ func isAllowedUSDCharacter(r rune) bool {
 	return strings.ContainsRune(allowed, r)
 }
 func isValidUSDSeparatorIndex(decimal, comma int) bool {
-	return decimal > comma && (decimal - comma) % len(",000") == 0
+	return decimal > comma && (decimal-comma)%len(",000") == 0
 }
