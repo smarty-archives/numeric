@@ -52,6 +52,13 @@ func (this *USDToCentsFixture) TestTryUSDToCents_Invalid_MissingCharacters() {
 	this.assertInvalid("$0.0")
 	this.assertInvalid("$000")
 }
+func (this *USDToCentsFixture) TestTryUSDToCents_Invalid_BadSyntax() {
+	this.assertInvalid("$ 0.00")
+	this.assertInvalid("$0 .00")
+	this.assertInvalid("$0. 00")
+	this.assertInvalid("$0.0 0")
+	this.assertInvalid("0.0$0")
+}
 func (this *USDToCentsFixture) TestTryUSDToCents_Invalid_IllegalCharacters() {
 	this.assertInvalid("$a.00")
 	this.assertInvalid("$0.a0")
